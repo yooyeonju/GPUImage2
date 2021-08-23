@@ -348,6 +348,12 @@
 		BCFF46FC1CBAF85000A0C521 /* TransformOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFF46FB1CBAF85000A0C521 /* TransformOperation.swift */; };
 		BCFF46FE1CBB0C1F00A0C521 /* AverageColorExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFF46FD1CBB0C1F00A0C521 /* AverageColorExtractor.swift */; };
 		BCFF47081CBB443B00A0C521 /* CameraConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFF47071CBB443B00A0C521 /* CameraConversion.swift */; };
+		CEB531CC26D388CB0048F64E /* TriangleOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB531CB26D388CB0048F64E /* TriangleOperation.swift */; };
+		CEB531CD26D388CB0048F64E /* TriangleOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB531CB26D388CB0048F64E /* TriangleOperation.swift */; };
+		CEB531D026D3898A0048F64E /* TextureLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB531CF26D3898A0048F64E /* TextureLoader.swift */; };
+		CEB531D126D3898A0048F64E /* TextureLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB531CF26D3898A0048F64E /* TextureLoader.swift */; };
+		CEB531D326D389BE0048F64E /* TextureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB531D226D389BE0048F64E /* TextureInfo.swift */; };
+		CEB531D426D389BE0048F64E /* TextureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB531D226D389BE0048F64E /* TextureInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -679,6 +685,9 @@
 		BCFF46FF1CBB0D8900A0C521 /* AverageColor_GL.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = AverageColor_GL.fsh; path = Source/Operations/Shaders/AverageColor_GL.fsh; sourceTree = "<group>"; };
 		BCFF47001CBB0D8900A0C521 /* AverageColor.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = AverageColor.vsh; path = Source/Operations/Shaders/AverageColor.vsh; sourceTree = "<group>"; };
 		BCFF47071CBB443B00A0C521 /* CameraConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraConversion.swift; path = Source/CameraConversion.swift; sourceTree = "<group>"; };
+		CEB531CB26D388CB0048F64E /* TriangleOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleOperation.swift; sourceTree = "<group>"; };
+		CEB531CF26D3898A0048F64E /* TextureLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureLoader.swift; sourceTree = "<group>"; };
+		CEB531D226D389BE0048F64E /* TextureInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -929,6 +938,7 @@
 		BC6E7CA11C39A9D8006DF678 = {
 			isa = PBXGroup;
 			children = (
+				CEB531CE26D389780048F64E /* Texture */,
 				BC6E7CC51C39AD7B006DF678 /* Base */,
 				BCD1B1441C66A890001F2BDC /* Inputs */,
 				BCD1B1451C66A89D001F2BDC /* Outputs */,
@@ -1159,8 +1169,18 @@
 				BC4EE14A1CB33BBF00AD8A65 /* Image processing */,
 				BC7FD0A91CA76F9F00037949 /* Effects */,
 				BC1E12F81C9F4C69008F844F /* Blends */,
+				CEB531CB26D388CB0048F64E /* TriangleOperation.swift */,
 			);
 			name = Operations;
+			sourceTree = "<group>";
+		};
+		CEB531CE26D389780048F64E /* Texture */ = {
+			isa = PBXGroup;
+			children = (
+				CEB531CF26D3898A0048F64E /* TextureLoader.swift */,
+				CEB531D226D389BE0048F64E /* TextureInfo.swift */,
+			);
+			path = Texture;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1375,6 +1395,7 @@
 				BCBEC0C61CCD2E6200B70ED7 /* Histogram.swift in Sources */,
 				BCFF46E21CBADB3E00A0C521 /* SingleComponentGaussianBlur.swift in Sources */,
 				BC38D52522AEE0B8000AE4F9 /* PictureInput.swift in Sources */,
+				CEB531D326D389BE0048F64E /* TextureInfo.swift in Sources */,
 				BC7FD0F71CB0620E00037949 /* ChromaKeyBlend.swift in Sources */,
 				BC7FD0861CA62E1100037949 /* BrightnessAdjustment.swift in Sources */,
 				BC7FD1631CB17C8D00037949 /* ImageOrientation.swift in Sources */,
@@ -1389,6 +1410,7 @@
 				BC7FD1141CB078C200037949 /* LightenBlend.swift in Sources */,
 				BC2C48041CB80E860085E4BC /* Crop.swift in Sources */,
 				BC1E12FA1C9F4CAB008F844F /* DissolveBlend.swift in Sources */,
+				CEB531CC26D388CB0048F64E /* TriangleOperation.swift in Sources */,
 				BC7FD0B91CA7793500037949 /* CGAColorspaceFilter.swift in Sources */,
 				BCFF46B41CB756B800A0C521 /* SmoothToonFilter.swift in Sources */,
 				BC7FD15D1CB0CCD000037949 /* ColorMatrixFilter.swift in Sources */,
@@ -1425,6 +1447,7 @@
 				BCFF46CA1CB96BD700A0C521 /* HighPassFilter.swift in Sources */,
 				BC7FD1321CB0A57F00037949 /* HighlightsAndShadows.swift in Sources */,
 				BC8B7A8D1CB5A6C500ACF7AA /* TwoStageOperation.swift in Sources */,
+				CEB531D026D3898A0048F64E /* TextureLoader.swift in Sources */,
 				BC7FD11C1CB0795A00037949 /* NormalBlend.swift in Sources */,
 				BC4EE15E1CB3481F00AD8A65 /* ThresholdSobelEdgeDetection.swift in Sources */,
 				BC7FD1911CB1D2A300037949 /* ImageGenerator.swift in Sources */,
@@ -1557,6 +1580,7 @@
 				BC9E35871E52571D00B8604F /* PrewittEdgeDetection.swift in Sources */,
 				BC38D53622AEE173000AE4F9 /* OpenGLContext-OpenGLES.swift in Sources */,
 				BC9E35551E52522200B8604F /* ConvertedShaders_GLES.swift in Sources */,
+				CEB531D426D389BE0048F64E /* TextureInfo.swift in Sources */,
 				BC38D52622AEE0B8000AE4F9 /* PictureInput.swift in Sources */,
 				BC9E35D21E52580700B8604F /* SoftLightBlend.swift in Sources */,
 				BC9E353C1E524D8400B8604F /* Color.swift in Sources */,
@@ -1571,6 +1595,7 @@
 				BC9E359F1E52576500B8604F /* TransformOperation.swift in Sources */,
 				BC9E35951E52574700B8604F /* Crop.swift in Sources */,
 				BC9E35321E524D7600B8604F /* SerialDispatch.swift in Sources */,
+				CEB531CD26D388CB0048F64E /* TriangleOperation.swift in Sources */,
 				BC9E35651E5256B500B8604F /* ExposureAdjustment.swift in Sources */,
 				BC9E35821E52570D00B8604F /* Laplacian.swift in Sources */,
 				BC9E35B91E5257B900B8604F /* TiltShift.swift in Sources */,
@@ -1607,6 +1632,7 @@
 				BC9E35D31E52580A00B8604F /* SourceOverBlend.swift in Sources */,
 				BC9E357E1E5256FE00B8604F /* Vibrance.swift in Sources */,
 				BC9E35471E524D9A00B8604F /* SolidColorGenerator.swift in Sources */,
+				CEB531D126D3898A0048F64E /* TextureLoader.swift in Sources */,
 				BC9E356E1E5256CE00B8604F /* FalseColor.swift in Sources */,
 				BC9E35881E52572000B8604F /* ThresholdSobelEdgeDetection.swift in Sources */,
 				BC9E356F1E5256D000B8604F /* HighlightsAndShadows.swift in Sources */,

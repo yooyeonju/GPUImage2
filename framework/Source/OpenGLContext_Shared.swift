@@ -19,6 +19,19 @@ import Foundation
 
 public let sharedImageProcessingContext = OpenGLContext()
 
+public func runOperationSynchronously(_ operation: () -> ()) {
+    sharedImageProcessingContext.runOperationSynchronously(operation)
+}
+
+public func runOperationAsynchronously(_ operation: @escaping () -> ()) {
+    sharedImageProcessingContext.runOperationAsynchronously(operation)
+}
+
+public func normalizedImageVerticesForAspectRatio(_ inputSize: Size) -> [GLfloat] {
+    // NoRotation
+    return [0.0, 0.0, GLfloat(inputSize.width), 0.0, 0.0,  GLfloat(inputSize.height), GLfloat(inputSize.width), GLfloat(inputSize.height)]
+}
+
 extension OpenGLContext {
     public func programForVertexShader(_ vertexShader:String, fragmentShader:String) throws -> ShaderProgram {
         let lookupKeyForShaderProgram = "V: \(vertexShader) - F: \(fragmentShader)"
